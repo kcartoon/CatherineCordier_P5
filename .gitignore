@@ -1,0 +1,5 @@
+# ignore tous les fichiers vscode.json
+/.vscode/*
+
+# ignore repertoire node_modules
+/backend/node_modules/*

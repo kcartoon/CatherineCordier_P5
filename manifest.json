@@ -1,0 +1,10 @@
+{
+    "name": "Projet5-Orinoco",
+    "short_name": "Orinoco",
+    "start_url": "https://kcartoon.github.io/CatherineCordier_P5/",
+    "description": "Site e-commerce vente appareil photo",
+    "icons": [{
+        "src": "./frontend/src/logo.jpg",
+        "type": "image/jpg"
+    }]
+}

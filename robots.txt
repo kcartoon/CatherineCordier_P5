@@ -1,0 +1,13 @@
+robots.txt du site https://kcartoon.github.io/CatherineCordier_P5/
+User-agent: * (Autorise l’accès à tous les robots)
+
+Disallow: /wp-* (Pour bloquer l’accès à un répertoire commençant par /wp-)
+
+Disallow: /login.php (Pour bloquer l’accès à la page https://kcartoon.github.io/CatherineCordier_P5/includes/form_1.php)
+
+Disallow: /checkout/ (Pour bloquer l’accès au répertoire checkout)
+
+Disallow: /*.pdf$ (Pour bloquer toutes les URLs se terminant par .pdf)
+
+Disallow: /*? (Pour bloquer l’accès aux URLs contenant un point d’interrogation comme https://kcartoon.github.io/CatherineCordier_P5/includes/page.html?id=8)
+Sitemap: https://kcartoon.github.io/CatherineCordier_P5/sitemap.xml

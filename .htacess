@@ -1,0 +1,84 @@
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript
+
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+# BEGIN Expires Headers
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresDefault "access plus 2 days"
+</IfModule>
+# END Expires Headers
+
+# BEGIN Cache-Control Headers
+<IfModule mod_headers.c>
+<FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
+Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+<FilesMatch "\.(js)$">
+Header set Cache-Control "max-age=2592000, private"
+</FilesMatch>
+<filesMatch "\.(html|htm)$">
+Header set Cache-Control "max-age=7200, public"
+</filesMatch>
+# Enleve le cache pour les ressources dynamiques
+<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+Header unset Cache-Control
+</FilesMatch>
+</IfModule>
+# END Cache-Control Headers
+
+RewriteEngine On
+
+	## no-www -> www
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE,QSA]
+	## http -> https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE,QSA]
+
+AddType 'text/html; charset=UTF-8' html
+
+<IfModule mod_expires.c>
+
+ ExpiresActive On
+ ExpiresByType image/jpg "access plus 31536000 seconds"
+ ExpiresByType image/jpeg "access plus 31536000 seconds"
+ ExpiresByType image/png "access plus 31536000 seconds"
+ ExpiresByType image/bmp "access plus 31536000 seconds"
+ ExpiresByType image/woff "access plus 31536000 seconds"
+ ExpiresByType image/ico "access plus 31536000 seconds"
+ ExpiresByType text/css "access plus 31536000 seconds"
+ ExpiresByType text/javascript "access plus 31536000 seconds"
+ ExpiresByType text/html "access plus 604800 seconds"
+
+</IfModule>
+
+<ifmodule mod_headers.c>
+
+<filesmatch "\\.(ico|jpe?g|png|bmp|woff|gif|swf|gz|ttf|webp)$">
+Header set Cache-Control "max-age=31536000"
+</filesmatch>
+<filesmatch "\\.(css)$">
+Header set Cache-Control "max-age=31536000"
+</filesmatch>
+<filesmatch "\\.(js)$">
+Header set Cache-Control "max-age=31536000"
+</filesmatch>
+<filesmatch "\\.(html|htm)$">
+Header set Cache-Control "max-age=604800"
+</filesmatch>
+
+</ifmodule>

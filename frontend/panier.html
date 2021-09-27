@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/frontend/src/icone.jpg">
+    <!-- SEO -->
+    <meta name="keywords" content="Orinoco, site e-commerce appareil photo" />
+    <meta name="description" content="Orinoco est un site e-commerce" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kcartoon.github.io/CatherineCordier_P5/" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Polices-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet" />
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/db7320c9ef.js" crossorigin="anonymous"></script>
+    <title>Orinoco | Site e_commerce| Photographie</title>
+</head>
+
+<body>
+    <!-- Header + nav menu -->
+    <header class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img class="img-fluid" src="../frontend/src/logo.jpg" alt="logo orinoco" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ms-4 " id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="panier.html" id="basketPreview">Panier</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <!-- Description -->
+    <main>
+        <div class="mx-5 mt-4 align-middle">
+        </div>
+    </main>
+    <!-- Panier -->
+    <section id="emptyBasket">
+        <div class="container my-3 py-1">
+            <div class="text-center my-5 shadow p-3 mb-5 bg-body rounded">
+                <h1 class="fs-1 font-weight-bold text-secondary my-5">Votre panier est vide, veuillez vous rendre le page d'accueil pour faire votre choix
+                </h1>
+                <a role="button" class="btn btn-secondary text-uppercase my-3" href="../index.html">C'est par
+                    ici</a>
+            </div>
+        </div>`
+    </section>
+    <!-- Commande -->
+    <div id="section" class="container my-5 align-middle ">
+        <div class=" d-none" id="basket">
+            <h2 class="text-center fs-4 text-light bg-secondary basket d-none">Contenu du panier</h2>
+            <div class="table-responsive">
+                <table class="table table-hover my-auto mx-0">
+                    <thead>
+                        <tr class="text-center fs-5">
+                            <th scope="col">Produit</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Option</th>
+                            <th scope="col">Quantité</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col" class="bg-light">Sous-total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsBasket">
+                        <!--Insertion panier.js-->
+                    </tbody>
+                    <tfoot>
+                        <tr class="text-center fs-5 bg-light">
+                            <th colspan="4" class="bg-white"></th>
+                            <th colspan="1">Total : </th>
+                            <th colspan="1" id="totalPrice"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="text-center my-5 row" id="cacheButton">
+                <div class="col-12 col-sm-6 my-4">
+                    <button type="submit" class="btn btn-secondary mx-5" id="validationBasket">Valider le
+                        panier</button>
+                </div>
+                <div class="col-12 col-sm-6 my-4">
+                    <button type="button" class="btn btn-danger mx-5" data-bs-toggle="modal" data-bs-target="#modalClearBasket">Vider le panier</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Formulaire -->
+    <div class="my-3 mx-5" id="orderForm">
+        <p class="my-5 fs-5">Merci de remplir ce formulaire pour passer votre commande, tous les champs sont obligatoires
+        </p>
+        <form class="row g-3" id="orderFormValidity">
+            <div class="col-md-4">
+                <label for="firstName">Prénom</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Ex: 'ori'" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" required>
+            </div>
+            <div class="col-md-4">
+                <label for="lastName">Nom</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Ex: 'noco'" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$" required>
+            </div>
+            <div class="col-md-4">
+                <label for="email">Email</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="email" class="form-control" id="email" placeholder="Ex: 'orinoco@mail.fr'" aria-describedby="inputGroupPrepend" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="address">Adresse</label>
+                <input type="text" class="form-control" id="address" placeholder="Ex: '3 rue orinoco'" pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$" required>
+            </div>
+            <div class="col-md-3">
+                <label for="city">Ville</label>
+                <input type="text" class="form-control" id="city" placeholder="Ex: 'orinococity'" pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$" required>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <p><label class="form-check-label" for="invalidCheck2" data-bs-toggle="tooltip" data-bs-placement="top" title="Termes et conditions de vente : Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum consequatur quos quis, asperiores nostrum cupiditate consequuntur earum quae saepe distinctio!">
+                            Accepter les termes et conditions de vente</label></p>
+                </div>
+            </div>
+            <div class="text-center my-5 d-md-flex justify-content-md-end">
+                <div class="col-12 col-sm-6 my-4">
+                    <button type="submit" class="btn btn-secondary mx-5" id="order">Passer la commande</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <!-- Pop-up Modal -->
+    <div class="modal fade" tabindex="-1" id="modalClearBasket" aria-labelledby="modalClearBasket" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Suppression panier</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Voulez-vous vraiment supprimer le panier ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="clearBasket">Oui</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid">
+            <div class="row text-center p-3">
+                <a class="col text-black" href="https://twitter.com/" aria-label="Twitter">
+                    <i class="fa fa-twitter fa-2x"></i>
+                </a>
+                <a class="col text-black" href="https://fr-fr.facebook.fr/" aria-label="Facebook">
+                    <i class="fa fa-facebook fa-2x"></i>
+                </a>
+                <a class="col text-black" href="https://www.instagram.com/" aria-label="Instagram">
+                    <i class="fa fa-instagram fa-2x"></i>
+                </a>
+            </div>
+            <div class="row text-center p-4">
+                <a class="col-sm-12 col-xl text-black" href="#">Mentions légales</a>
+                <a class="col-sm-12 col-xl text-black" href="#">
+                    Conditions générales de vente
+                </a>
+                <a class="col-sm-12 col-xl text-black" href="mailto:contact@orinoco.com">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="../frontend/js/commun.js"></script>
+    <script src="../frontend/js/panier.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
