@@ -1,3 +1,5 @@
+//Mise à jour du basketPreview
+basketPreview();
 //Appel de l'adresse URL de l'API
 fetch(url)
     .then((response) => response.json())
