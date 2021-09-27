@@ -1,5 +1,3 @@
-//Mise à jour du basketPreview
-basketPreview();
 //Appel de l'adresse URL de l'API
 fetch(url)
     .then((response) => response.json())
@@ -11,6 +9,9 @@ fetch(url)
             "Attention votre serveur en local Nodejs n'est pas lancé, veuillez contacter l'administrateur du site"
         );
     });
+//Mise à jour du basketPreview
+basketPreview();
+
 // fonction pour la création des cards de la page d'accueil
 function addCards(data) {
     //boucle pour l'affichage de chaque produit
