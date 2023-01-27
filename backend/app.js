@@ -11,7 +11,7 @@ const app = express();
 
 mongoose
     .connect(
-        'mongodb+srv://kcartoon:VbWdY7wHGnPER4Pb@cluster0.fewjs.mongodb.net/test?retryWrites=true', { useNewUrlParser: true, useUnifiedTopology: true }
+        'mongodb+srv://will:nAcmfCoHGDgzrCHG@cluster0-pme76.mongodb.net/test?retryWrites=true', { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(() => {
         console.log('Successfully connected to MongoDB Atlas!');
