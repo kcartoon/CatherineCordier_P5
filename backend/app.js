@@ -11,8 +11,8 @@ const app = express();
 
 mongoose
     .connect(
-        'mongodb://atlas-sql-6167e29af145bc2b947aa53f-fewjs.a.query.mongodb.net/db_orinoco?ssl=true&authSource=admin', { useNewUrlParser: true, useUnifiedTopology: true }
-        /**mongodb+srv://kcartoon:VbWdY7wHGnPER4Pb@cluster0.fewjs.mongodb.net/?retryWrites=true&w=majority**/
+        'mongodb+srv://kcartoon:VbWdY7wHGnPER4Pb@cluster0.fewjs.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }
+        /****/
     )
     .then(() => {
         console.log('Successfully connected to MongoDB Atlas!');
